@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: users-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.event.merge.entity_copy_observer: allow
+    datasource:
+      url: jdbc:mysql://mysql:3306/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
+      username: admin
+      password: admin
+      driverClassName: com.mysql.cj.jdbc.Driver
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${dh.keycloak.clientId}
+            client-secret: ${dh.keycloak.clientSecret}
+            scope: openid
+            realm: ${dh.keycloak.realm}
+            serverUrl: ${dh.keycloak.serverUrl}
+        provider:
+          keycloak:
+            issuer-uri: ${dh.keycloak.serverUrl}/realms/${dh.keycloak.realm}
+        resourceserver:
+          jwt:
+            issuer-uri: ${dh.keycloak.serverUrl}/realms/${dh.keycloak.realm}
+            jwk-set-uri: ${dh.keycloak.serverUrl}/realms/${dh.keycloak.realm}/protocol/openid-connect/certs
+
+dh:
+  keycloak:
+    realm: digital-money-house-realm
+    serverUrl: http://keycloak:8080
+    clientId: api-dmh
+    clientSecret: oLpKOfEhAE9ulOntpD5ditAiBb7zkw17
+    tokenEndpoint: ${dh.keycloak.serverUrl}/realms/${dh.keycloak.realm}/protocol/openid-connect/token
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: users-service
+    description: microservicio de registro y login desde config server github
+    version: 1.0.0
+
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://localhost:8081/actuator/info
+    healthCheckUrlPath: http://localhost:8081/actuator/health
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+
+server:
+  port: 8081
