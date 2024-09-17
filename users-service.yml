@@ -44,4 +44,4 @@ path:
       file: classpath:cvu.txt
 
 server:
-  port: 8085
+  port: 8082
