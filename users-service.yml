@@ -36,6 +36,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+path:
+  to:
+    alias:
+      file: classpath:alias.txt
+    cvu:
+      file: classpath:cvu.txt
 
 server:
   port: 8082
