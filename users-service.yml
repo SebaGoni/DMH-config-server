@@ -9,7 +9,7 @@ spring:
       hibernate.event.merge.entity_copy_observer: allow
   datasource:
     url: jdbc:mysql://mysql:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: admin
+    username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
 
