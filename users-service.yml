@@ -3,21 +3,21 @@ spring:
     name: users-service
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate.event.merge.entity_copy_observer: allow
-    datasource:
-      url: jdbc:mysql://mysql:3306/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
-      username: admin
-      password: admin
-      driverClassName: com.mysql.cj.jdbc.Driver
+  datasource:
+    url: jdbc:mysql://mysql:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: admin
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 management:
   endpoints:
     web:
       exposure:
-        include: health, info
+        include: health,info
   info:
     env:
       enabled: true
@@ -25,18 +25,17 @@ management:
 info:
   app:
     name: users-service
-    description: microservicio de registro y login desde config server github
+    description: Microservicio de registro y login desde config server GitHub
     version: 1.0.0
 
 eureka:
   instance:
     hostname: localhost
-    statusPageUrlPath: http://localhost:8081/actuator/info
-    healthCheckUrlPath: http://localhost:8081/actuator/health
+    status-page-url: http://localhost:8081/actuator/info
+    health-check-url: http://localhost:8081/actuator/health
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
 
 server:
   port: 8081
-
