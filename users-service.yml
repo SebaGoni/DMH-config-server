@@ -12,9 +12,6 @@ spring:
     username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
 
 management:
   endpoints:
@@ -34,17 +31,11 @@ info:
 eureka:
   instance:
     hostname: localhost
-    status-page-url: http://localhost:8082/actuator/info
-    health-check-url: http://localhost:8082/actuator/health
+    status-page-url: http://localhost:8081/actuator/info
+    health-check-url: http://localhost:8081/actuator/health
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-path:
-  to:
-    alias:
-      file: classpath:alias.txt
-    cvu:
-      file: classpath:cvu.txt
 
 server:
   port: 8082
