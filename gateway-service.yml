@@ -7,7 +7,7 @@ spring:
     config:
       uri: http://config-server:8888/
     gateway:
-      globalcors:
+      global cors:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "*"
