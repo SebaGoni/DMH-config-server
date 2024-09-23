@@ -47,13 +47,9 @@ info:
     version: 1.0.0
 
 eureka:
-  instance:
-    hostname: localhost
-    statusPageUrlPath: http://localhost:8084/actuator/info
-    healthCheckUrlPath: http://localhost:8084/actuator/info
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 server:
   port: 8084
