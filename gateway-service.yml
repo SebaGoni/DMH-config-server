@@ -10,8 +10,8 @@ spring:
       global cors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins:
-              - "*"
+            allowedOriginPatterns:
+              - "*" 
             allowedMethods:
               - GET
               - POST
