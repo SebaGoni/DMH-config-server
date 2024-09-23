@@ -43,7 +43,7 @@ management:
 info:
   app:
     name: Gateway
-    description: API gateway (remote)
+    description: API gateway from github
     version: 1.0.0
 
 eureka:
