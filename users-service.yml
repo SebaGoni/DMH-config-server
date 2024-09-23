@@ -3,15 +3,15 @@ spring:
     name: users-service
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate.event.merge.entity_copy_observer: allow
-  datasource:
-    url: jdbc:mysql://mysql:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password: admin
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    datasource:
+     url: jdbc:mysql://mysql:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
+     username: root
+     password: admin
+     driver-class-name: com.mysql.cj.jdbc.Driver
 
 management:
   endpoints:
@@ -31,8 +31,8 @@ info:
 eureka:
   instance:
     hostname: localhost
-    status-page-url: http://localhost:8081/actuator/info
-    health-check-url: http://localhost:8081/actuator/health
+    status-page-url: http://localhost:8082/actuator/info
+    health-check-url: http://localhost:8082/actuator/health
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
