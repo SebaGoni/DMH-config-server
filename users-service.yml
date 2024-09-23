@@ -42,7 +42,15 @@ path:
       file: classpath:alias.txt
     cvu:
       file: classpath:cvu.txt
-
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USERNAME}
+    password: ${GMAIL_PASSWORD}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
 
 server:
   port: 8082
