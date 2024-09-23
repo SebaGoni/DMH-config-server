@@ -6,15 +6,11 @@ spring:
   cloud:
     config:
       uri: http://config-server:8888/
-      discovery:
-        serviceId: config-server
-        enabled: true
     gateway:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: '*'
-            #allowedHeaders: '*'
+            allowedOrigins: "*"
             allowedMethods:
               - GET
               - POST
@@ -33,15 +29,8 @@ spring:
       routes:
         - id: users-service
           uri: http://users-service:8082
-          #uri: lb://users-service
           predicates:
-            - Path=/user/**        
-        - id: accounts-service
-          uri: http://accounts-service:8083
-          #uri: lb://accounts-service
-          predicates:
-            - Path=/account/**
-
+            - Path=/users/**
 
 management:
   endpoints:
@@ -64,8 +53,8 @@ eureka:
     healthCheckUrlPath: http://localhost:8084/actuator/info
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+      defaultZone: http://eureka-server:8761/eureka/
 
 server:
   port: 8084
+
