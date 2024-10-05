@@ -58,13 +58,4 @@ eureka:
 
 server:
   port: 8084
-  
-datasource:
-  url: jdbc:mysql://localhost:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
-  username: root
-  password: admin
-  driver-class-name: com.mysql.cj.jdbc.Driver
-jpa:
-  hibernate:
-      ddl-auto: update
 
