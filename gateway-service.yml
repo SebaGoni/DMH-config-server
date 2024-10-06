@@ -5,7 +5,7 @@ spring:
     import: "optional:configserver:"
   cloud:
     config:
-      uri: http://98.82.183.74:8888/
+      uri: http://config-server:8888/
     gateway:
       global cors:
         corsConfigurations:
@@ -54,7 +54,7 @@ info:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://98.82.183.74:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
 
 server:
   port: 8084
