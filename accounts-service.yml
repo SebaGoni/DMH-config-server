@@ -8,7 +8,7 @@ spring:
     properties:
       hibernate.event.merge.entity_copy_observer: allow
     datasource:
-     url: jdbc:mysql://mysql:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
+     url: jdbc:mysql://98.82.183.74:3307/DMH-DB?createDatabaseIfNotExist=true&serverTimezone=UTC
      username: root
      password: admin
      driver-class-name: com.mysql.cj.jdbc.Driver
@@ -30,11 +30,11 @@ info:
 eureka:
   instance:
     hostname: localhost
-    statusPageUrlPath: http://localhost:8085/actuator/info
-    healthCheckUrlPath: http://localhost:8085/actuator/health
+    statusPageUrlPath: http://98.82.183.74:8085/actuator/info
+    healthCheckUrlPath: http://98.82.183.74:8085/actuator/health
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://98.82.183.74:8761/eureka/
 
 server:
   port: 8085
