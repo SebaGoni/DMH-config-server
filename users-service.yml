@@ -31,11 +31,11 @@ info:
 eureka:
   instance:
     hostname: localhost
-    status-page-url: http://users-service:8082/actuator/info
-    health-check-url: http://users-service:8082/actuator/health
+    status-page-url: http://localhost:8082/actuator/info
+    health-check-url: http://localhost:8082/actuator/health
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 path:
   to:
     alias:
