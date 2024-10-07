@@ -30,8 +30,8 @@ info:
 eureka:
   instance:
     hostname: localhost
-    statusPageUrlPath: http://accounts-service:8085/actuator/info
-    healthCheckUrlPath: http://accounts-service:8085/actuator/health
+    statusPageUrlPath: http://localhost:8085/actuator/info
+    healthCheckUrlPath: http://localhost:8085/actuator/health
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
