@@ -34,7 +34,7 @@ eureka:
     healthCheckUrlPath: http://accounts-service:8085/actuator/health
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 server:
   port: 8085
